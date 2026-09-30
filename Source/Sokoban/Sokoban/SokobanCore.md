@@ -1,7 +1,5 @@
 # Sokoban 核心代码
 
-本目录存放推箱子的核心实现，已迁移至空白 Sokoban 工程，不依赖原工程的 TopDown 或 Variant 模板代码。
-
 当前属于 Sokoban 运行时模块，不是独立模块。现阶段已有数据、校验、规则、单局管理，以及 Enhanced Input、棋盘显示、动画、镜头和灰盒 HUD。编辑器工具位于独立的 SokobanEditor 模块；正式主菜单、选关、成绩存档与结算已加入，入口见[正式流程](../../../Docs/Frontend.md)。
 
 首次试玩的编辑器配置见 [EditorSetup.md](EditorSetup.md)。

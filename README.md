@@ -9,10 +9,9 @@
 | 希望了解的内容 | 建议入口 |
 |---|---|
 | 直接试玩与环境配置 | [工程配置与试玩接入](Source/Sokoban/Sokoban/EditorSetup.md) |
-| 主菜单、选关、存档与结算配置 | [正式流程接入](Docs/Frontend.md) |
 | 使用工具制作关卡 | [关卡制作与交付操作规范](Docs/LevelEditor.md) |
 | 后续 AI Coding 的接口与边界 | [AI 开发约定](Docs/AI_DEVELOPMENT.md) |
-| 数据结构与职责划分 | [核心代码说明](Source/Sokoban/Sokoban/README.md)、[SokobanTypes.h](Source/Sokoban/Sokoban/Data/SokobanTypes.h) |
+| 数据结构与职责划分 | [核心代码说明](Source/Sokoban/Sokoban/SokobanCore.md)、[SokobanTypes.h](Source/Sokoban/Sokoban/Data/SokobanTypes.h) |
 | 移动、推动和撤销的判定 | [SokobanRules.cpp](Source/Sokoban/Sokoban/Rules/SokobanRules.cpp) |
 | 单局状态、历史与通知 | [SokobanSession.cpp](Source/Sokoban/Sokoban/Gameplay/SokobanSession.cpp) |
 | Slate 工具与资产保存 | [SSokobanLevelEditor.cpp](Source/SokobanEditor/Private/SSokobanLevelEditor.cpp)、[编辑文档模型](Source/SokobanEditor/Private/SokobanEditorDocument.cpp) |
@@ -92,8 +91,6 @@ Scripts/Editor/             默认材质创建辅助脚本
 
 玩法数据流为 `Enhanced Input → PlayerController → GameMode → Session → Rules`；成功后由 `Session` 通知 `GameMode`，再更新棋盘表现。工具数据流为 `Slate 控件 → 编辑草稿 → USokobanLevelData → .uasset`。运行时复制 DA 中的布局初始化对局，游戏中的移动不会改写设计资产。
 
-工程已从官方 TopDown 模板迁移到独立的 `Sokoban` 模块，自有玩法不依赖模板角色或模板控制器。规则层仍使用 UE 的类型与容器；迁移到其他 UE 工程需要同步模块配置、资源和输入接入，不是直接复制到任意标准 C++ 项目。
-
 ## 6. 验证与验收边界
 
 2026-09-29 的本地验证记录：Editor 目标构建成功；Game 目标构建检查成功；自动化测试 42 项通过、0 失败、0 警告。测试分布如下：
@@ -119,5 +116,4 @@ Scripts/Editor/             默认材质创建辅助脚本
 - 工具扩展：编辑器内试玩入口、更多批量编辑能力，以及按需增加死锁提示或可解性检查。
 
 当前灰盒使用引擎基础几何体和项目默认材质，不需要额外购买美术资源即可验证玩法。正式美术阶段需要地板、墙、箱子、箱子到位状态、目标标记、玩家表现及 UI／音效资源；应保持网格尺寸、物体中心点和目标可辨识性的一致性。
-
 
