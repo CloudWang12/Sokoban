@@ -120,8 +120,4 @@ Scripts/Editor/             默认材质创建辅助脚本
 
 当前灰盒使用引擎基础几何体和项目默认材质，不需要额外购买美术资源即可验证玩法。正式美术阶段需要地板、墙、箱子、箱子到位状态、目标标记、玩家表现及 UI／音效资源；应保持网格尺寸、物体中心点和目标可辨识性的一致性。
 
-## 8. GitHub 提交要求
 
-提交 `Source/`、`Content/`、`Config/`、`Scripts/`、`Docs/`、`Sokoban.uproject`、本 README 与 `.gitignore`。其中 `.uasset`、`.umap` 属于必要源资源，尤其不能遗漏 `Content/Sokoban/Materials/M_SokobanDefault.uasset`。
-
-不提交 `Binaries/`、`Intermediate/`、`Saved/`、`DerivedDataCache/` 和 IDE 缓存。接收方应能从源码重新生成工程并编译；不要依赖旧工程的 DLL。仓库中的迁移重定向仍应保留，除非已经完成相应资产引用审计。
